@@ -1,11 +1,7 @@
 import cloneDeep from 'lodash.clonedeep';
 import isEqual from 'lodash.isequal';
 import merge from 'lodash.merge';
-<<<<<<< HEAD
-import { AttributeMap, Op } from 'quill-delta';
-=======
-import Delta, { AttributeMap } from 'quill-delta';
->>>>>>> c9fa49e4 (Register table handler in a module)
+import Delta, { AttributeMap, Op } from 'quill-delta';
 import { LeafBlot, Scope } from 'parchment';
 import { Range } from './selection';
 import CursorBlot from '../blots/cursor';
@@ -34,7 +30,7 @@ class Editor {
       if (op.insert != null) {
         deleteDelta.retain(length);
         if (typeof op.insert === 'string') {
-          let text = op.insert;
+          const text = op.insert;
           addedNewline =
             !text.endsWith('\n') &&
             (scrollLength <= index ||
